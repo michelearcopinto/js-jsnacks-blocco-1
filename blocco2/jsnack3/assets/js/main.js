@@ -25,7 +25,7 @@ calcButton.addEventListener('click', function () {
 
         alert('Il numero finale non può essere minore di quello iniziale.');
 
-    } else if (insertFinalNumber.valueAsNumber === insertInitialNumber.valueAsNumber || (insertInitialNumber.valueAsNumber - insertFinalNumber.valueAsNumber) < 2) {
+    } else if (insertFinalNumber.valueAsNumber === insertInitialNumber.valueAsNumber || (insertFinalNumber.valueAsNumber - insertInitialNumber.valueAsNumber) < 2) {
 
         alert('I numeri non possono corrispondere e devono avere almeno un intervallo di 2 numeri.');
 
