@@ -12,13 +12,23 @@
 </head>
 
 <body>
-    <h1></h1>
+    <h1 class="text-uppercase text-center">somma numeri</h1>
     <div class="card container">
         <div class="card-body">
             <h5 class="card-title">JSnack 3</h5>
             <p class="card-text">Il software deve chiedere per 10 volte all’utente di inserire un numero. Il programma
                 stampa la somma di tutti i numeri inseriti.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="row">
+                <div class="form mb-3 col-6 d-flex flex-column align-items-center">
+                    <label for="floatingInput">Numero da inserire:</label>
+                    <input id="insertNumber" type="number" class="form-control" placeholder="Inserire numero">
+                </div>
+                <div class="form col-6 d-flex flex-column align-items-center">
+                    <label for="floatingPassword">Somma dei 10 numeri inseriti:</label>
+                    <input id="sumOutput" type="number" class="form-control" placeholder="Risultato" readonly>
+                </div>
+                <button id="calcButton" type="button" class="btn btn-danger col-2 mx-auto">Calcola</button>
+            </div>
         </div>
     </div>
 
