@@ -12,20 +12,30 @@
 </head>
 
 <body>
-    <h1 class="text-uppercase text-center">generatore "nomi cognomi"</h1>
+    <h1 class="text-uppercase text-center">genera "nome cognome"</h1>
     <div class="card container">
         <div class="card-body">
             <h5 class="card-title">JSnack 2</h5>
             <p class="card-text">Generatore di “nomi cognomi” casuali: il Grande Gatsby ha una lista di nomi e una lista
-                di cognomi, e da queste vuole generare una falsa lista di invitati con nome e cognome.
-            </p>
+                di cognomi, e da queste vuole generare una falsa lista di invitati con nome e cognome.</p>
             <div class="row">
-                <div class="form col-12 d-flex flex-column align-items-center">
-                    <label for="floatingPassword">Genera invito:</label>
-                    <input id="inviteOutput" class="fw-bold fs-3 text-center" type="text" class="form-control"
-                        placeholder="Nome" readonly>
+                <div class="col-7 row align-content-start">
+                    <div class="form mb-3 col-12 d-flex flex-column align-items-center">
+                        <label for="floatingInput">Numero invitati:</label>
+                        <input id="insertNumber" type="number" class="form-control" placeholder="Inserire numero">
+                    </div>
+                    <button id="startButton" type="button" class="btn btn-danger col-5 mx-auto">Genera</button>
                 </div>
-                <button id="startButton" type="button" class="btn btn-danger col-2 mx-auto mt-3">Genera</button>
+                <div class="col-5">
+                    <div class="form d-flex flex-column align-items-center">
+                        <label for="floatingPassword">Numero prenotazione:</label>
+                        <input id="numberOutput" type="text" class="form-control" placeholder="Totale invitati"
+                            readonly>
+                        <label for="floatingPassword">Elenco invitati:</label>
+                        <div id="guestsContainer"></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

@@ -19,8 +19,11 @@ const cognomi = [
 let nomiCognomi = [];
 
 const startButton = document.getElementById('startButton');
-const inviteOutput = document.getElementById('inviteOutput');
-let generatedName;
+const insertNumber = document.getElementById('insertNumber');
+const numberOutput = document.getElementById('numberOutput');
+const guestsContainer = document.getElementById('guestsContainer');
+
+let guestList, guestElement;
 
 
 function generateRandomNumber(min, max) {
@@ -28,18 +31,28 @@ function generateRandomNumber(min, max) {
     return randomNum;
 }
 
-
-for (let i = 0; i < nomi.length ** 2; i++) {
-
-    generatedName = `${nomi[generateRandomNumber(0, 49)]} ${cognomi[generateRandomNumber(0, 49)]}`
-    nomiCognomi.push(generatedName)
-}
-
-console.log(nomiCognomi)
-
 startButton.addEventListener('click', function () {
 
-    inviteOutput.value = nomiCognomi[generateRandomNumber(0, 2400)];
+    if (guestList) {
+        guestsContainer.removeChild(guestList);
+        console.log("l'elemento è stato rimosso");
+    }
 
+    guestList = document.createElement('ol');
+    guestsContainer.append(guestList);
 
+    for (let i = 0; i < insertNumber.valueAsNumber; i++) {
+
+        guestElement = document.createElement('li');
+        guestElement.classList.add('fw-bold', 'fs-3');
+        guestElement.textContent = `${nomi[generateRandomNumber(0, 49)]} ${cognomi[generateRandomNumber(0, 49)]}`
+        guestList.append(guestElement);
+
+        nomiCognomi.push(guestElement.textContent);
+    }
+
+    numberOutput.value = `Numero invitati: ${insertNumber.value}`
+
+    console.log(nomiCognomi);
+    nomiCognomi = [];
 })
