@@ -12,7 +12,7 @@ let divElement;
 const calcButton = document.getElementById('calcButton');
 
 let rangeNumbers = [];
-let oddNumbers = [];
+let oddPositions = [];
 let sum = 0;
 
 calcButton.addEventListener('click', function () {
@@ -45,14 +45,18 @@ calcButton.addEventListener('click', function () {
 
             rangeNumbers.push(i);
 
+        }
+
+        for (let i = 0; i < rangeNumbers.length; i++) {
+
             if (i % 2 !== 0) {
-                oddNumbers.push(i);
+                oddPositions.push(rangeNumbers[i]);
             }
         }
 
-        for (let i = 0; i < oddNumbers.length; i++) {
+        for (let i = 0; i < oddPositions.length; i++) {
 
-            sum += oddNumbers[i];
+            sum += oddPositions[i];
         }
 
         sumOutput.valueAsNumber = sum;
@@ -64,7 +68,7 @@ calcButton.addEventListener('click', function () {
             divElement.classList.add('box')
             numbersContainer.append(divElement);
 
-            if (rangeNumbers[i] % 2 !== 0) {
+            if (i % 2 !== 0) {
 
                 divElement.classList.add('fw-bold', 'fs-3', 'text-center', 'text-danger')
             } else {
@@ -76,10 +80,10 @@ calcButton.addEventListener('click', function () {
 
 
     console.log(rangeNumbers);
-    console.log(oddNumbers);
+    console.log(oddPositions);
     console.log(sum);
     rangeNumbers = [];
-    oddNumbers = [];
+    oddPositions = [];
     sum = 0;
 })
 
